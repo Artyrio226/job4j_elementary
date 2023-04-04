@@ -17,6 +17,18 @@ public class MatrixCheckTest {
     }
 
     @Test
+    public void whenNotFirstMonoHorizontal() {
+        char[][] input = {
+                {' ', ' ', ' '},
+                {' ', 'X', 'X'},
+                {' ', ' ', ' '},
+        };
+        int row = 1;
+        boolean result = MatrixCheck.monoHorizontal(input, row);
+        assertThat(result).isFalse();
+    }
+
+    @Test
     public void whenNotLastMonoHorizontal() {
         char[][] input = {
                 {' ', ' ', ' '},
@@ -29,14 +41,38 @@ public class MatrixCheckTest {
     }
 
     @Test
-    public void whenNotFirstMonoHorizontal() {
+    public void whenHasMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void whenNotFirstMonoVertical() {
         char[][] input = {
                 {' ', ' ', ' '},
-                {' ', 'X', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void whenNotLastMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
                 {' ', ' ', ' '},
         };
-        int row = 1;
-        boolean result = MatrixCheck.monoHorizontal(input, row);
+        int column = 2;
+        boolean result = MatrixCheck.monoVertical(input, column);
         assertThat(result).isFalse();
     }
 }
