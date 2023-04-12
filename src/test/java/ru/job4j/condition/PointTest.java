@@ -31,4 +31,22 @@ public class PointTest {
         double out = a.distance(b);
         assertEquals(expected, out, 0.01);
     }
+
+    @Test
+    public void when173to642then5dot83() {
+        Point a = new Point(1, 7, 3);
+        Point b = new Point(6, 4, 2);
+        double expected = 5.83;
+        double out = a.distance(b);
+        assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when103to640then6dot40() {
+        Point a = new Point(1, 0, 3);
+        Point b = new Point(6, 4, 0);
+        double expected = 6.40;
+        double out = a.distance(b);
+        assertEquals(expected, out, 0.01);
+    }
 }
