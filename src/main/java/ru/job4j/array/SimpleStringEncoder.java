@@ -7,7 +7,6 @@ public class SimpleStringEncoder {
         int counter = 1;
         for (int i = 1; i < input.length(); i++) {
             if (input.charAt(i) == symbol) {
-                symbol = input.charAt(i);
                 counter++;
             } else {
                 result = result + symbol + (counter > 1 ? counter : "");
